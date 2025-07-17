@@ -9,19 +9,19 @@ namespace desafio_bar
 {
     internal class Conta
     {
-        public char Sexo;
-        public int Cerveja;
-        public int Espetinho;
-        public int Refrigerante; 
+        public char Gender;
+        public int Beer;
+        public int Barbecue;
+        public int SoftDrink; 
 
-        public double Consumo(int Cerveja, int Espetinho, int Refrigerante)
+        public double Feeding(int Cerveja, int Espetinho, int Refrigerante)
         {
             return Cerveja * 5.0 + Refrigerante * 3.0 + Espetinho * 7.0;
         }
 
-        public double Couvert()
+        public double Cover()
         {
-            if (Consumo(Cerveja, Espetinho, Refrigerante) <= 30){
+            if (Feeding(Beer, Barbecue, SoftDrink) <= 30){
                 return 4;
             }
             else
@@ -30,7 +30,7 @@ namespace desafio_bar
             }
         }
 
-        public double Entrada(char Sexo)
+        public double Ticket(char Sexo)
         {
             if (Sexo == 'f' || Sexo == 'F')
             {
@@ -44,20 +44,20 @@ namespace desafio_bar
 
         public double Total()
         {
-            if (Consumo(Cerveja, Espetinho, Refrigerante) > 30)
+            if (Feeding(Beer, Barbecue, SoftDrink) > 30)
             {
-                return Consumo(Cerveja, Espetinho, Refrigerante) + Entrada(Sexo);
+                return Feeding(Beer, Barbecue, SoftDrink) + Ticket(Gender);
             }
             else
             {
-                return Consumo(Cerveja, Espetinho, Refrigerante) + Entrada(Sexo) + 4;
+                return Feeding(Beer, Barbecue, SoftDrink) + Ticket(Gender) + 4;
             }
         }
 
         public override string ToString()
         {
-            return "Relatório: \nConsumo: " + Consumo(Cerveja, Espetinho, Refrigerante) + "\nCouvert: " + Couvert() + "\nIngresso: "
-                + Entrada(Sexo) + "\n\nValor a pagar: " + Total();
+            return "Relatório: \nConsumo: " + Feeding(Beer, Barbecue, SoftDrink) + "\nCouvert: " + Cover() + "\nIngresso: "
+                + Ticket(Gender) + "\n\nValor a pagar: " + Total();
         }
     }
 }

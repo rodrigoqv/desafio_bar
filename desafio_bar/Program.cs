@@ -3,22 +3,22 @@
 Conta conta = new Conta();
 
 Console.WriteLine("Sexo: ");
-conta.Sexo = char.Parse(Console.ReadLine());
+conta.Gender = char.Parse(Console.ReadLine());
 
 Console.WriteLine("Quantidade de cervejas: ");
-conta.Cerveja = int.Parse(Console.ReadLine());
+conta.Beer = int.Parse(Console.ReadLine());
 
 Console.WriteLine("Quantidade de refrigerantes: ");
-conta.Refrigerante = int.Parse(Console.ReadLine());
+conta.SoftDrink = int.Parse(Console.ReadLine());
 
 Console.WriteLine("Quantidade de espetinhos: ");
-conta.Espetinho = int.Parse(Console.ReadLine());
+conta.Barbecue = int.Parse(Console.ReadLine());
 
-conta.Consumo(conta.Cerveja, conta.Espetinho, conta.Refrigerante);
+conta.Feeding(conta.Beer, conta.Barbecue, conta.SoftDrink);
 
-conta.Couvert();
+conta.Cover();
 
-conta.Entrada(conta.Sexo);
+conta.Ticket(conta.Gender);
 
 conta.Total();
 
